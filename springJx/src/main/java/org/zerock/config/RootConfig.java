@@ -24,6 +24,7 @@ public class RootConfig {
 //		hikariConfig.setJdbcUrl("jdbc:oracle:thin:@localhost:1521:xe");
 		hikariConfig.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
 		hikariConfig.setJdbcUrl("jdbc:log4jdbc:oracle:thin:@localhost:1521:xe");
+
 		hikariConfig.setUsername("spring");
 		hikariConfig.setPassword("spring");
 
