@@ -13,7 +13,7 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
-@ComponentScan(basePackages = { "org.zerock.sample" })
+//@ComponentScan(basePackages = { "org.zerock.sample" })
 @MapperScan(basePackages = { "org.zerock.mapper" })
 public class RootConfig {
 
@@ -25,8 +25,8 @@ public class RootConfig {
 		hikariConfig.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
 		hikariConfig.setJdbcUrl("jdbc:log4jdbc:oracle:thin:@localhost:1521:xe");
 
-		hikariConfig.setUsername("spring");
-		hikariConfig.setPassword("spring");
+		hikariConfig.setUsername("book_ex");
+		hikariConfig.setPassword("book_ex");
 
 		HikariDataSource dataSource = new HikariDataSource(hikariConfig);
 
@@ -35,6 +35,7 @@ public class RootConfig {
 
 	@Bean
 	public SqlSessionFactory sqlSessionFactory() throws Exception {
+
 		SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
 		sqlSessionFactory.setDataSource(dataSource());
 
